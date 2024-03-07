@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  padding-left:2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Light mode styles */
+.light{
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --heading-color: #444444;
+}
+
+/* Dark mode styles */
+.dark{
+  --bg-color: #333333;
+  --text-color: #ffffff;
+  --heading-color: #dddddd;
+}
+
+h1 {
+  color: var(--heading-color);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.3em 1em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+.navbar div {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+.mode-switch label {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  margin-left: 10px;
+}
+
+.mode-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.mode-switch input:checked + .slider {
+  background-color: #2196f3;
+}
+
+.mode-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.mode-switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
